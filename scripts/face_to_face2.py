@@ -20,7 +20,21 @@ class FaceToFace():
         if self.image_org is None:
             return None
 
-        return id(self.image_org), type(self.image_org), self.image_org.shape
+        org = self.image_org
+
+        gimg = cv2.cvtColor(org, cv2.COLOR_BGR2GRAY)
+        classifier = "/usr/share/opencv/haarcascades/haarcascade_frontalface_default.xml"
+        cascade = cv2.CascadeClassifier(classifier)
+        face = cascade.detectMultiScale(gimg, 1.1, 1, cv2.CASCADE_FIND_BIGGEST_OBJECT)
+
+        if len(face) == 0:
+            return None
+
+        r = face[0]
+        cv2.rectangle(org, tuple(r[0:2]), tuple(r[0:2]+r[2:4]), (0, 255, 255), 4)
+        cv2.imwrite("/tmp/image.jpg", org)
+
+        return "detected"
 
 if __name__ == '__main__':
     rospy.init_node('face_to_face')
