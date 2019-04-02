@@ -1,9 +1,15 @@
 #!/bin/bash -xve
 
-#ワークスペースにリポジトリをコピー
-rsync -av ./ ~/catkin_ws/src/pimouse_run_corridor/
+sudo apt-get update
+sudo apt-get install libopencv-dev python-opencv
 
-#pimouse_rosをgit cloneでワークスペースに持ってくる
+sudo apt-get install ros-indigo-cv-bridge
+sudo apt-get install ros-indigo-cv-camera
+
+#rsync and make
+rsync -av ./ ~/catkin_ws/src/pimouse_vision_control/
+
+#clone pimouse_ros
 cd ~/catkin_ws/src/
 git clone --depth=1 https://github.com/hirotaka001/pimouse_ros.git
 
