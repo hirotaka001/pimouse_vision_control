@@ -1,9 +1,9 @@
 #!/bin/bash -xve
 
 sudo apt-get update
-sudo apt install ros-kinetic-cv-bridge
-sudo apt install ros-kinetic-cv-camera
-sudo apt install ros-kinetic-image-transport-plugins
+sudo apt-get install ros-kinetic-cv-bridge
+sudo apt-get install ros-kinetic-cv-camera
+sudo apt-get install ros-kinetic-image-transport-plugins
 sudo apt-get install libopencv-dev python-opencv
 
 sudo apt-get install ros-indigo-cv-bridge
