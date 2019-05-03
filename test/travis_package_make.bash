@@ -6,8 +6,8 @@ sudo apt-get update
 #sudo apt-get -f install ros-kinetic-image-transport-plugins
 sudo apt-get -f install libopencv-dev python-opencv
 
-sudo apt-get install ros-indigo-cv-bridge
-sudo apt-get install ros-indigo-cv-camera
+sudo apt-get -f install ros-indigo-cv-bridge
+sudo apt-get -f install ros-indigo-cv-camera
 
 #rsync and make
 rsync -av ./ ~/catkin_ws/src/pimouse_vision_control/
