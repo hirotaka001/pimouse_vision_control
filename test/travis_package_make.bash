@@ -1,6 +1,7 @@
 #!/bin/bash -xve
 
 sudo apt-get update
+sudo apt install catkin
 sudo apt-get -f install opencv-data
 sudo apt-get install -f
 #sudo apt-get -f install ros-kinetic-cv-bridge
